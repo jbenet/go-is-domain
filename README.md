@@ -1,5 +1,7 @@
 # go-is-domain
 
+This package is dedicated to [@whyrusleeping](https://github.com/whyrusleeping).
+
 Docs: https://godoc.org/github.com/jbenet/go-is-domain
 
 
@@ -17,6 +19,5 @@ isd.IsDomain("foo.bar.com.") // true
 isd.IsDomain("foo.bar.baz") // false
 
 ```
-
 
 MIT Licensed
