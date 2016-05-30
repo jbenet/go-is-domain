@@ -3,7 +3,7 @@
 list=tlds-alpha-by-domain.txt
 
 rm -f $list
-wget http://data.iana.org/TLD/$list
+wget https://data.iana.org/TLD/$list
 
 header=$(head -1 $list)
 
