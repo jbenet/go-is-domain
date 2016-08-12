@@ -1,6 +1,6 @@
 package isdomain
 
-// TLDs is a set of TLDs, according to ICANN in 2014.
+// # Version 2019032100, Last Updated Thu Mar 21 07:07:01 2019 UTC
 var TLDs = map[string]bool{
 	"AAA":                      true,
 	"AARP":                     true,
@@ -1534,11 +1534,4 @@ var TLDs = map[string]bool{
 	"ZONE":                     true,
 	"ZUERICH":                  true,
 	"ZW":                       true,
-}
-
-// ExtendedTLDs is a set of additional "TLDs", allowing decentralized name
-// systems, like TOR and Namecoin.
-var ExtendedTLDs = map[string]bool{
-	"BIT":   true,
-	"ONION": true,
 }
