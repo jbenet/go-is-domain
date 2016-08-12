@@ -2,6 +2,8 @@ package isdomain
 
 import "strings"
 
+//go:generate bash regenerate-tlds.sh
+
 // IsICANNTLD returns whether the given string is a TLD (Top Level Domain),
 // according to ICANN. Well, really according to the TLDs listed in this
 // package.

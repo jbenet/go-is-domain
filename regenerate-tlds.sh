@@ -1,13 +1,14 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-list=tlds-alpha-by-domain.txt
+out=${1-tlds_iana.go}
 
-rm -f $list
-wget https://data.iana.org/TLD/$list
+list=$(mktemp)
+
+wget https://data.iana.org/TLD/tlds-alpha-by-domain.txt -O $list
 
 header=$(head -1 $list)
 
-cat > tlds.go <<EOF
+cat > $out <<EOF
 package isdomain
 
 // $header
@@ -16,18 +17,10 @@ EOF
 
 grep -v '^#' $list | while read tld; do
     echo -e "\t\"$tld\": true,"
-done >> tlds.go
+done >> $out
 
-cat >> tlds.go <<EOF
-}
+echo '}' >> $out
 
-// ExtendedTLDs is a set of additional "TLDs", allowing decentralized name
-// systems, like TOR and Namecoin.
-var ExtendedTLDs = map[string]bool{
-	"BIT":   true,
-	"ONION": true,
-}
-EOF
+gofmt -w $out
 
-gofmt -w tlds.go
 
