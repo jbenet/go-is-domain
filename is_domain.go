@@ -1,7 +1,6 @@
 package isdomain
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -31,20 +30,22 @@ func IsTLD(s string) bool {
 // IsDomain returns whether given string is a domain.
 // It first checks the TLD, and then uses a regular expression.
 func IsDomain(s string) bool {
-	fmt.Println("checking suffix")
 	if strings.HasSuffix(s, ".") {
 		s = s[:len(s)-1]
 	}
-	fmt.Println("splitting string")
 	split := strings.Split(s, ".")
 	tld := split[len(split)-1]
-	fmt.Println("checking if tld")
-	fmt.Println("tld to check", tld)
 	if !IsTLD(tld) {
 		return false
 	}
-	fmt.Println("forcing lowercase")
 	s = strings.ToLower(s)
-	s = strings.Trim(s, "_dnslink.")
+	// allow matching of dnslink domains
+	// the following only removes `_dnslink.``
+	// if it is the leading value.
+	// it will remove from _dnslink.example.com
+	// but will not remove from example._dnslink.com
+	if strings.Contains(s, "_dnslink.") {
+		s = strings.TrimPrefix(s, "_dnslink.")
+	}
 	return domainRegexp.MatchString(s)
 }
