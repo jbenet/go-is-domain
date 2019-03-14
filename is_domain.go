@@ -45,6 +45,6 @@ func IsDomain(s string) bool {
 	}
 	fmt.Println("forcing lowercase")
 	s = strings.ToLower(s)
-	fmt.Println("running regexp")
+	s = strings.Trim(s, "_dnslink.")
 	return domainRegexp.MatchString(s)
 }
