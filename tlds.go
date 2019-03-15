@@ -1533,6 +1533,7 @@ var TLDs = map[string]bool{
 	"ZM":                       true,
 	"ZONE":                     true,
 	"ZUERICH":                  true,
+	"ZW":                       true,
 }
 
 // ExtendedTLDs is a set of additional "TLDs", allowing decentralized name
