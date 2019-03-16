@@ -39,13 +39,5 @@ func IsDomain(s string) bool {
 		return false
 	}
 	s = strings.ToLower(s)
-	// allow matching of dnslink domains
-	// the following only removes `_dnslink.``
-	// if it is the leading value.
-	// it will remove from _dnslink.example.com
-	// but will not remove from example._dnslink.com
-	if strings.Contains(s, "_dnslink.") {
-		s = strings.TrimPrefix(s, "_dnslink.")
-	}
 	return domainRegexp.MatchString(s)
 }
