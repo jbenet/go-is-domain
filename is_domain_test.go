@@ -19,7 +19,7 @@ func TestBasic(t *testing.T) {
 		"fjdoisajfdiosafdsa8fd8saf8dsa8fdsafdsa-fd-sa-fd-saf-dsa.onion": true,
 		"a.b.c.d.e.f.g.h.i.j.k.l.museum":                                true,
 		"a.b.c.d.e.f.g.h.i.j.k.l":                                       false,
-		"_dnslink.example.com":                                          true,
+		"_dnslink.example.com":                                          false,
 		"example._dnslink.com":                                          false,
 		"example.com._dnslink":                                          false,
 	}
