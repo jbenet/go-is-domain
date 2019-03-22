@@ -1,6 +1,8 @@
 package isdomain
 
-import "strings"
+import (
+	"strings"
+)
 
 // IsICANNTLD returns whether the given string is a TLD (Top Level Domain),
 // according to ICANN. Well, really according to the TLDs listed in this
@@ -31,14 +33,11 @@ func IsDomain(s string) bool {
 	if strings.HasSuffix(s, ".") {
 		s = s[:len(s)-1]
 	}
-
 	split := strings.Split(s, ".")
 	tld := split[len(split)-1]
-
 	if !IsTLD(tld) {
 		return false
 	}
-
 	s = strings.ToLower(s)
 	return domainRegexp.MatchString(s)
 }
