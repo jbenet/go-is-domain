@@ -10,6 +10,10 @@ func TestBasic(t *testing.T) {
 		"com":              false, // yeah yeah...
 		".":                false, // yeah yeah...
 		"..":               false,
+		".com":             false,
+		".com.":            false,
+		"com.":             false,
+		"com..":            false,
 		".foo.com.":        false,
 		".foo.com":         false,
 		"fo o.com":         false,
