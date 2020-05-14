@@ -22,4 +22,6 @@ var ExtendedTLDs = map[string]bool{
 	"OZ":    true,
 	"PARODY":true,
 	"PIRATE":true,
+	"CRYPTO": true, // unstoppabledomains.com
+	"ZIL":    true, // unstoppabledomains.com
 }
