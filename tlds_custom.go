@@ -8,6 +8,14 @@ var ExtendedTLDs = map[string]bool{
 	"ETH":    true, // ens.domains
 	"CRYPTO": true, // unstoppabledomains.com
 	"ZIL":    true, // unstoppabledomains.com
+	"D":      true, // denarius.io
+	"DNR":    true, // denarius.io
+	"IPFS":   true, // denarius.io
+	"SYS":    true, // denarius.io
+	"KING":   true, // denarius.io
+	"BTC":    true, // denarius.io
+	"BITCOIN":true, // denarius.io
+	"DENARII":true, // denarius.io
 	"BBS":    true, // opennic.org
 	"CHAN":   true, // opennic.org
 	"CYB":    true, // opennic.org
